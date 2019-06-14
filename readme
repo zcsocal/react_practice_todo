@@ -1,0 +1,67 @@
+
+Notes
+
+Install React Tools for Chrome or Firefox
+
+index.html
+<div id="root"></div> 
+Output div for app, and all the components that are part of the app
+
+
+index.js - The entry point to React
+ReactDOM.render(<App />, document.getElementById('root'));  - Inserts the App into "root" div above
+import * as serviceWorker from './serviceWorker'; - Needed for progressive web apps and offline content (Not needed in many cases)
+
+
+App.js
+Formatted like any other class based or functional component
+All of your components are rendered in here before being placed in the ROOT by INDEX.JS
+Note the use of {} to insert JS
+You can clean out the main header and leave just the div "App" empty 
+
+App.css
+The main CSS for the App. You can delete the contents of this and paste some RESET css code if you want. 
+
+Components folder
+where your components go! You'll need to create this, as it does not come with the initial setup.
+Your component files are named starting with capital letters: Header.js, Foot.js, Body.js, etc.
+
+Components
+These contain isolated bits of your app. They are functional or class based. You have to imoort React, write up your component code, then export the component at the bottom.
+Now, you have to go to App.js and IMPORT it at the top or it won't show up in your app.
+import Todos from './Components/Componentname';
+Then tag it into the App body wherever you want it to go
+<Componentname />
+
+On the App.js you can load a state. In this case a todo list. 
+state = {
+    todos: [
+      {
+        id: 1,
+        title: "Take out the trash",
+        completed: false
+      },
+      {
+        id: 2,
+        title: "Wash the dog",
+        completed: false
+      },
+      {
+        id: 3,
+        title: "Try to find purpose in my meaningless exsistence.",
+        completed: false
+      }
+    ]
+
+  }
+
+  You then pass it though the component tag as a PROP using this.state.propname- <Componentname todos={this.state.todos}/>
+
+
+
+
+
+
+
+
+
